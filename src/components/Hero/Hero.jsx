@@ -1,29 +1,46 @@
+import React from "react";
+import image2 from "/src/assets/travel2.png"; // Foreground Image
+import image from "/src/assets/travel.png"; // Background Image
 
-
-const Hero = () => {
+const ComingSoon = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-yellow-100 via-purple-100 to-purple-200 text-center p-6">
-      {/* Header Section */}
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4">
-        Transform the Way You <br />
-        Manage Your{" "}
-        <span className="text-purple-600 bg-yellow-100 px-0 py-0.5 rounded-md text-[2.9rem]">
-          Finances
-        </span>
-      </h1>
-      <p className="mt-2 text-lg text-gray-700 max-w-2xl">
-        Whether you are a small business owner, a finance professional, or an
-        individual seeking better control over your finances, FundForge is your
-        comprehensive solution.
-      </p>
-      <div className="mt-8 flex gap-4">
-        <button className="px-6 py-3 text-white bg-purple-600 rounded-full shadow-lg hover:bg-purple-700 hover:shadow-xl transition duration-300">
-          Download Now
-        </button>
-      </div>
+    <div className="flex flex-col md:flex-row items-center justify-between min-h-screen bg-gradient-to-r from-yellow-100 via-purple-100 to-purple-200 p-6 relative">
+      {/* Left Side: Text & Input */}
+      <div className="md:w-3/2 pl-10">
+        <h1 className="text-left text-8xl mt-10 font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 drop-shadow-lg shadow-blue-600">
+          COMING <br /> SOON!
+        </h1>
+        <p className="mt-4 text-xl text-gray-600">We are currently working hard on this page!</p>
+
+        <div className="mt-6 flex gap-2">
+          <input
+            type="email"
+            placeholder="Enter email"
+            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <button className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
+            NOTIFY ME
+          </button>
+        </div>
       </div>
 
-  )
-}
+      {/* Image Wrapper (for layering) */}
+      <div className="md:w-1/2 flex justify-center relative mt-10">
+        {/* Background Image */}
+        <img 
+          src={image}
+          alt="Background Rocket" 
+          className="absolute top-[-180px] left-0 w-full max-w-4xl h-auto  z-0"
+        />
+        {/* Foreground Image */}
+        <img 
+          src={image2}
+          alt="Rocket Launch" 
+          className="relative w-full max-w-3xl md:max-w-4xl lg:max-w-5xl h-auto z-10 translate-x-30"
+        />
+      </div>
+    </div>
+  );
+};
 
-export default Hero
+export default ComingSoon;
